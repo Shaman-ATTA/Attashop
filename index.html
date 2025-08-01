@@ -126,11 +126,11 @@
             <form id="login-form">
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Логин</label>
-                    <input type="text" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="text" id="login-username" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Пароль</label>
-                    <input type="password" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="password" id="login-password" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-bold">
                     Войти
@@ -154,19 +154,19 @@
             <form id="register-form">
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Логин</label>
-                    <input type="text" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="text" id="register-username" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Email</label>
-                    <input type="email" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="email" id="register-email" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Пароль</label>
-                    <input type="password" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="password" id="register-password" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <div class="mb-4">
                     <label class="block text-gray-300 mb-2">Повторите пароль</label>
-                    <input type="password" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
+                    <input type="password" id="register-password-confirm" class="w-full bg-gray-700 text-white px-4 py-2 rounded border border-gray-600 focus:outline-none focus:ring-2 focus:ring-green-500" required>
                 </div>
                 <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-bold">
                     Зарегистрироваться
@@ -193,12 +193,12 @@
                 </div>
                 <div class="flex space-x-2 overflow-x-auto pb-2">
                     <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap active" data-category="all">Все товары</button>
-                    <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="weapons">Оружие</button>
+                    <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="furniture">Фурнитура</button>
                     <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="ammo">Боеприпасы</button>
                     <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="clothing">Одежда</button>
                     <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="medical">Медицина</button>
                     <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="food">Еда</button>
-                    <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="other">Прочее</button>
+                    <button class="category-btn px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg whitespace-nowrap" data-category="transport">Транспорт</button>
                 </div>
             </div>
             
@@ -210,21 +210,14 @@
         <!-- Сервера -->
         <div id="servers" class="tab-content">
             <h1 class="text-3xl font-bold mb-6 flex items-center">
-                <i class="fas fa-server mr-3 text-green-400"></i> ОНЛАЙН СЕРВЕРА
+                <i class="fas fa-server mr-3 text-green-400"></i> СЕРВЕРА ATTA
             </h1>
             
-            <div class="mb-6 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <div class="relative flex-grow">
-                    <input type="text" placeholder="Поиск серверов..." class="w-full bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                    <i class="fas fa-search absolute right-3 top-3 text-gray-400"></i>
+            <div class="mb-6 bg-gray-800 p-4 rounded-lg">
+                <div class="flex items-center text-yellow-400">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    <span>Внимание: Сервера находятся в разработке. Статистика временно недоступна.</span>
                 </div>
-                <select class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500">
-                    <option>Все регионы</option>
-                    <option>Москва</option>
-                    <option>Санкт-Петербург</option>
-                    <option>Европа</option>
-                    <option>Азия</option>
-                </select>
             </div>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4" id="servers-container">
@@ -281,9 +274,9 @@
                                 <h2 id="profile-username" class="text-2xl font-bold"></h2>
                                 <p class="text-gray-400 mb-4">Игрок с <span id="member-since"></span></p>
                                 <div class="w-full bg-gray-700 rounded-full h-2.5 mb-2">
-                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 75%"></div>
+                                    <div class="bg-green-600 h-2.5 rounded-full" style="width: 10%"></div>
                                 </div>
-                                <p class="text-sm text-gray-300">Уровень <span id="profile-level">15</span> (75%)</p>
+                                <p class="text-sm text-gray-300">Уровень <span id="profile-level">1</span> (10%)</p>
                             </div>
                             
                             <div class="mt-6">
@@ -292,12 +285,12 @@
                                 </h3>
                                 <div class="space-y-2">
                                     <div class="flex items-center bg-gray-700 p-2 rounded">
-                                        <i class="fas fa-medal text-yellow-400 mr-2"></i>
-                                        <span>Первая кровь (Убил 1 зомби)</span>
+                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
+                                        <span class="text-gray-400">Первая кровь (Убил 1 зомби)</span>
                                     </div>
                                     <div class="flex items-center bg-gray-700 p-2 rounded">
-                                        <i class="fas fa-medal text-yellow-400 mr-2"></i>
-                                        <span>Выживший (Прожил 7 дней)</span>
+                                        <i class="fas fa-medal text-gray-400 mr-2"></i>
+                                        <span class="text-gray-400">Выживший (Прожил 7 дней)</span>
                                     </div>
                                     <div class="flex items-center bg-gray-700 p-2 rounded">
                                         <i class="fas fa-medal text-gray-400 mr-2"></i>
@@ -316,27 +309,27 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Дней выжил</div>
-                                    <div class="text-2xl font-bold">12</div>
+                                    <div class="text-2xl font-bold">0</div>
                                 </div>
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Зомби убито</div>
-                                    <div class="text-2xl font-bold">87</div>
+                                    <div class="text-2xl font-bold">0</div>
                                 </div>
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Игроков убито</div>
-                                    <div class="text-2xl font-bold">5</div>
+                                    <div class="text-2xl font-bold">0</div>
                                 </div>
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Пройдено км</div>
-                                    <div class="text-2xl font-bold">42.7</div>
+                                    <div class="text-2xl font-bold">0</div>
                                 </div>
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Любимое оружие</div>
-                                    <div class="text-2xl font-bold">AK-74</div>
+                                    <div class="text-2xl font-bold">-</div>
                                 </div>
                                 <div class="bg-gray-700 p-4 rounded-lg">
                                     <div class="text-gray-400 text-sm">Рекорд дальности</div>
-                                    <div class="text-2xl font-bold">327м</div>
+                                    <div class="text-2xl font-bold">0м</div>
                                 </div>
                             </div>
                         </div>
@@ -347,39 +340,12 @@
                             </h3>
                             <div class="space-y-3">
                                 <div class="flex items-start bg-gray-700 p-3 rounded-lg">
-                                    <div class="bg-green-900 text-green-400 p-2 rounded-full mr-3">
-                                        <i class="fas fa-check"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Прожил еще один день</p>
-                                        <p class="text-sm text-gray-400">2 часа назад</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-700 p-3 rounded-lg">
-                                    <div class="bg-red-900 text-red-400 p-2 rounded-full mr-3">
-                                        <i class="fas fa-skull"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Убит ордой зомби</p>
-                                        <p class="text-sm text-gray-400">1 день назад</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-700 p-3 rounded-lg">
                                     <div class="bg-blue-900 text-blue-400 p-2 rounded-full mr-3">
-                                        <i class="fas fa-user-friends"></i>
+                                        <i class="fas fa-user-plus"></i>
                                     </div>
                                     <div>
-                                        <p class="font-medium">Вступил в группу выживших</p>
-                                        <p class="text-sm text-gray-400">3 дня назад</p>
-                                    </div>
-                                </div>
-                                <div class="flex items-start bg-gray-700 p-3 rounded-lg">
-                                    <div class="bg-yellow-900 text-yellow-400 p-2 rounded-full mr-3">
-                                        <i class="fas fa-medal"></i>
-                                    </div>
-                                    <div>
-                                        <p class="font-medium">Получено достижение "Первая кровь"</p>
-                                        <p class="text-sm text-gray-400">5 дней назад</p>
+                                        <p class="font-medium">Вы зарегистрировались</p>
+                                        <p class="text-sm text-gray-400" id="registration-date"></p>
                                     </div>
                                 </div>
                             </div>
@@ -476,9 +442,9 @@
                 <div>
                     <h4 class="font-bold mb-4">Правовая информация</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-green-400">Условия использования</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-green-400">Политика конфиденциальности</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-green-400">Возврат средств</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-400" onclick="showTerms()">Условия использования</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-400" onclick="showPrivacy()">Политика конфиденциальности</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-green-400" onclick="showRefund()">Возврат средств</a></li>
                     </ul>
                 </div>
                 <div>
@@ -499,51 +465,137 @@
         </div>
     </footer>
 
+    <!-- Модальные окна для правовой информации -->
+    <div id="terms-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 rounded-lg p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Условия использования</h3>
+                <button onclick="closeModal('terms-modal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="prose prose-invert">
+                <h4>1. Общие положения</h4>
+                <p>1.1. Настоящие Условия использования регулируют отношения между Администрацией сайта и Пользователем.</p>
+                <p>1.2. Используя Сайт, Пользователь соглашается с настоящими Условиями.</p>
+                
+                <h4>2. Права и обязанности сторон</h4>
+                <p>2.1. Администрация обязуется:</p>
+                <ul>
+                    <li>Обеспечивать работоспособность Сайта</li>
+                    <li>Защищать персональные данные Пользователей</li>
+                </ul>
+                
+                <p>2.2. Пользователь обязуется:</p>
+                <ul>
+                    <li>Не использовать Сайт для противоправных целей</li>
+                    <li>Не распространять вредоносное ПО</li>
+                </ul>
+                
+                <h4>3. Ответственность</h4>
+                <p>3.1. Администрация не несет ответственности за:</p>
+                <ul>
+                    <li>Действия Пользователей</li>
+                    <li>Работу сторонних сервисов</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="privacy-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 rounded-lg p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Политика конфиденциальности</h3>
+                <button onclick="closeModal('privacy-modal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="prose prose-invert">
+                <h4>1. Сбор информации</h4>
+                <p>1.1. Мы собираем только необходимые данные для работы сервиса:</p>
+                <ul>
+                    <li>Логин и пароль</li>
+                    <li>Email для восстановления доступа</li>
+                    <li>Данные о покупках</li>
+                </ul>
+                
+                <h4>2. Использование данных</h4>
+                <p>2.1. Ваши данные используются для:</p>
+                <ul>
+                    <li>Предоставления услуг</li>
+                    <li>Технической поддержки</li>
+                    <li>Улучшения качества сервиса</li>
+                </ul>
+                
+                <h4>3. Защита информации</h4>
+                <p>3.1. Мы используем современные методы шифрования для защиты ваших данных.</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="refund-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-gray-800 rounded-lg p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Политика возврата средств</h3>
+                <button onclick="closeModal('refund-modal')" class="text-gray-400 hover:text-white">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="prose prose-invert">
+                <h4>1. Общие условия</h4>
+                <p>1.1. Возврат средств возможен в течение 14 дней с момента покупки.</p>
+                
+                <h4>2. Условия возврата</h4>
+                <p>2.1. Для возврата необходимо:</p>
+                <ul>
+                    <li>Отправить запрос в поддержку</li>
+                    <li>Указать причину возврата</li>
+                    <li>Приложить чек о покупке</li>
+                </ul>
+                
+                <h4>3. Сроки обработки</h4>
+                <p>3.1. Возврат обрабатывается в течение 3-5 рабочих дней.</p>
+            </div>
+        </div>
+    </div>
+
     <script>
-        // Данные товаров
+        // Данные товаров (обновленные категории)
         const itemsData = [
             {
                 id: 1,
                 name: "Военный рюкзак",
                 price: 2999,
                 image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fmilitary_backpack.png&w=256&q=75",
-                category: "other",
+                category: "clothing",
                 description: "Вместительный рюкзак для всех ваших нужд выживания."
             },
             {
                 id: 2,
-                name: "AK-74",
-                price: 5999,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fak74.png&w=256&q=75",
-                category: "weapons",
-                description: "Надежный автомат под патроны 5.45x39мм."
+                name: "Медицинские принадлежности",
+                price: 1599,
+                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Ffirst_aid_kit.png&w=256&q=75",
+                category: "medical",
+                description: "Набор для оказания первой медицинской помощи."
             },
             {
                 id: 3,
-                name: "Аптечка",
-                price: 1999,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Ffirst_aid_kit.png&w=256&q=75",
-                category: "medical",
-                description: "Необходима для лечения ран и болезней."
+                name: "Ящик с инструментами",
+                price: 3499,
+                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Ftoolbox.png&w=256&q=75",
+                category: "furniture",
+                description: "Необходим для ремонта и строительства."
             },
             {
                 id: 4,
-                name: "Прибор ночного видения",
-                price: 7999,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fnvgoggles.png&w=256&q=75",
-                category: "other",
-                description: "Видите в темноте и получайте преимущество."
+                name: "Колесо автомобильное",
+                price: 4999,
+                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fcar_wheel.png&w=256&q=75",
+                category: "transport",
+                description: "Запасное колесо для транспортных средств."
             },
             {
                 id: 5,
-                name: "Тактический жилет",
-                price: 3999,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Ftactical_vest.png&w=256&q=75",
-                category: "clothing",
-                description: "Переносите больше предметов и получайте дополнительную защиту."
-            },
-            {
-                id: 6,
                 name: "Консервированная фасоль",
                 price: 499,
                 image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fcanned_beans.png&w=256&q=75",
@@ -551,36 +603,12 @@
                 description: "Базовый запас еды, чтобы поддерживать ваши силы."
             },
             {
-                id: 7,
-                name: "M4A1",
-                price: 8999,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fm4a1.png&w=256&q=75",
-                category: "weapons",
-                description: "Штурмовая винтовка под патроны 5.56x45мм."
-            },
-            {
-                id: 8,
-                name: "5.45x39мм (30 патронов)",
+                id: 6,
+                name: "5.56x45мм (30 патронов)",
                 price: 1299,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2F545x39_30rnd.png&w=256&q=75",
+                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2F556x45_30rnd.png&w=256&q=75",
                 category: "ammo",
-                description: "Патроны 5.45x39мм, 30 штук в магазине."
-            },
-            {
-                id: 9,
-                name: "Морфин",
-                price: 899,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Fmorphine.png&w=256&q=75",
-                category: "medical",
-                description: "Обезболивающее, снимает боль от травм."
-            },
-            {
-                id: 10,
-                name: "Тактический шлем",
-                price: 3499,
-                image: "https://dayz.ginfo.gg/_next/image?url=https%3A%2F%2Fstatic.ginfo.gg%2Fimages%2Fdayz%2Fitems%2Ftactical_helmet.png&w=256&q=75",
-                category: "clothing",
-                description: "Защищает голову от пуль и ударов."
+                description: "Патроны 5.56x45мм, 30 штук в магазине."
             }
         ];
 
@@ -588,51 +616,27 @@
         const serversData = [
             {
                 id: 1,
-                name: "Выживание #1",
+                name: "ATTA #1 - Чернарус",
                 map: "Чернарус",
                 type: "PvPvE | 1PP",
-                status: "online",
-                players: "32/60",
+                status: "offline",
+                players: "0/60",
                 location: "Москва, RU",
-                ping: 24,
-                mods: "Vanilla+",
-                rules: "Новичкам рады, КОС запрещен"
+                ping: "-",
+                mods: "В разработке",
+                rules: "Скоро открытие"
             },
             {
                 id: 2,
-                name: "Хардкор",
+                name: "ATTA #2 - Ливония",
                 map: "Ливония",
                 type: "Хардкор | 1PP",
-                status: "online",
-                players: "48/60",
+                status: "offline",
+                players: "0/60",
                 location: "Санкт-Петербург, RU",
-                ping: 42,
-                mods: "DayZ Expansion",
-                rules: "Выживание в чистом виде, редкий лут"
-            },
-            {
-                id: 3,
-                name: "DayZ Россия",
-                map: "Намальск",
-                type: "RP | 1PP/3PP",
-                status: "restarting",
-                players: "0/80",
-                location: "Киев, UA",
-                ping: 68,
-                mods: "Namalsk, BaseBuilding+",
-                rules: "Ролевой сервер, строгие правила"
-            },
-            {
-                id: 4,
-                name: "Последний рубеж",
-                map: "Чернарус",
-                type: "PvP | 3PP",
-                status: "online",
-                players: "56/80",
-                location: "Франкфурт, DE",
-                ping: 92,
-                mods: "Vanilla",
-                rules: "Полный PvP, без правил"
+                ping: "-",
+                mods: "В разработке",
+                rules: "Скоро открытие"
             }
         ];
 
@@ -681,8 +685,15 @@
                 itemElement.setAttribute('data-price', (item.price / 100).toFixed(2));
                 itemElement.setAttribute('data-category', item.category);
                 
+                // Исправление ссылок на изображения
+                let imageUrl = item.image;
+                if (imageUrl.includes('dayz.ginfo.gg')) {
+                    imageUrl = imageUrl.replace('dayz.ginfo.gg/_next/image?url=', '').split('&w=')[0];
+                    imageUrl = decodeURIComponent(imageUrl);
+                }
+                
                 itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" class="w-full h-48 object-cover">
+                    <img src="${imageUrl}" alt="${item.name}" class="w-full h-48 object-cover" onerror="this.src='https://via.placeholder.com/300x200/1F2937/FFFFFF?text=No+Image'">
                     <div class="p-4">
                         <h3 class="font-bold text-xl mb-2">${item.name}</h3>
                         <p class="text-gray-300 mb-4">${item.description}</p>
@@ -739,7 +750,7 @@
                             <p class="text-gray-300">${server.map} | ${server.type}</p>
                             <div class="mt-2 flex items-center text-sm">
                                 <i class="fas fa-plug mr-1"></i>
-                                <span>Пинг: ${server.ping}мс</span>
+                                <span>Пинг: ${server.ping}</span>
                                 <span class="mx-2">|</span>
                                 <i class="fas fa-cubes mr-1"></i>
                                 <span>${server.mods}</span>
@@ -842,13 +853,51 @@
             // Формы
             document.getElementById('login-form').addEventListener('submit', function(e) {
                 e.preventDefault();
-                const username = this.querySelector('input[type="text"]').value;
-                login(username);
+                const username = document.getElementById('login-username').value;
+                const password = document.getElementById('login-password').value;
+                
+                // Проверка в localStorage
+                const users = JSON.parse(localStorage.getItem('dayz_users')) || [];
+                const user = users.find(u => u.username === username && u.password === password);
+                
+                if (user) {
+                    login(user.username);
+                } else {
+                    alert('Неверный логин или пароль');
+                }
             });
             
             document.getElementById('register-form').addEventListener('submit', function(e) {
                 e.preventDefault();
-                const username = this.querySelector('input[type="text"]').value;
+                const username = document.getElementById('register-username').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                const confirmPassword = document.getElementById('register-password-confirm').value;
+                
+                if (password !== confirmPassword) {
+                    alert('Пароли не совпадают');
+                    return;
+                }
+                
+                // Сохранение в localStorage
+                const users = JSON.parse(localStorage.getItem('dayz_users')) || [];
+                
+                if (users.some(u => u.username === username)) {
+                    alert('Пользователь с таким логином уже существует');
+                    return;
+                }
+                
+                const newUser = {
+                    username,
+                    email,
+                    password,
+                    joinDate: new Date().toLocaleDateString('ru-RU')
+                };
+                
+                users.push(newUser);
+                localStorage.setItem('dayz_users', JSON.stringify(users));
+                localStorage.setItem('dayz_current_user', JSON.stringify(newUser));
+                
                 login(username);
             });
             
@@ -931,10 +980,18 @@
                     const itemTotal = item.price * item.quantity;
                     subtotal += itemTotal;
                     
+                    // Находим изображение товара
+                    const itemData = itemsData.find(i => i.id.toString() === item.id);
+                    let imageUrl = itemData ? itemData.image : 'https://via.placeholder.com/80/1F2937/FFFFFF?text=No+Image';
+                    if (imageUrl.includes('dayz.ginfo.gg')) {
+                        imageUrl = imageUrl.replace('dayz.ginfo.gg/_next/image?url=', '').split('&w=')[0];
+                        imageUrl = decodeURIComponent(imageUrl);
+                    }
+                    
                     cartItemsHTML += `
                         <div class="cart-item p-4 flex justify-between items-center transition-colors duration-200">
                             <div class="flex items-center">
-                                <img src="${itemsData.find(i => i.id.toString() === item.id).image}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-4">
+                                <img src="${imageUrl}" alt="${item.name}" class="w-12 h-12 object-cover rounded mr-4" onerror="this.src='https://via.placeholder.com/80/1F2937/FFFFFF?text=No+Image'">
                                 <div>
                                     <h4 class="font-medium">${item.name}</h4>
                                     <p class="text-sm text-gray-400">${item.price.toFixed(2)} ₽ за шт.</p>
@@ -1011,10 +1068,15 @@
         }
         
         function login(username) {
-            currentUser = {
-                username: username,
-                joinDate: new Date().toLocaleDateString('ru-RU')
-            };
+            const users = JSON.parse(localStorage.getItem('dayz_users')) || [];
+            const user = users.find(u => u.username === username);
+            
+            if (!user) {
+                alert('Пользователь не найден');
+                return;
+            }
+            
+            currentUser = user;
             
             // Обновить UI
             document.getElementById('auth-buttons').classList.add('hidden');
@@ -1030,7 +1092,11 @@
             document.getElementById('profile-content').classList.remove('hidden');
             
             document.getElementById('profile-username').textContent = username;
-            document.getElementById('member-since').textContent = currentUser.joinDate;
+            document.getElementById('member-since').textContent = user.joinDate;
+            document.getElementById('registration-date').textContent = user.joinDate;
+            
+            // Сохранить текущего пользователя
+            localStorage.setItem('dayz_current_user', JSON.stringify(user));
             
             // Закрыть модальные окна
             closeLoginModal();
@@ -1053,6 +1119,9 @@
             document.getElementById('profile-not-logged').classList.remove('hidden');
             document.getElementById('profile-content').classList.add('hidden');
             
+            // Удалить текущего пользователя
+            localStorage.removeItem('dayz_current_user');
+            
             // Очистить корзину
             cart = [];
             updateCart();
@@ -1061,11 +1130,29 @@
         }
         
         function checkAuth() {
-            // В реальном приложении здесь была бы проверка cookies/token
-            // Для демо просто проверяем currentUser
-            if (currentUser) {
-                login(currentUser.username);
+            // Проверка сохраненного пользователя
+            const savedUser = localStorage.getItem('dayz_current_user');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                login(user.username);
             }
+        }
+
+        // Правовая информация
+        function showTerms() {
+            document.getElementById('terms-modal').classList.remove('hidden');
+        }
+        
+        function showPrivacy() {
+            document.getElementById('privacy-modal').classList.remove('hidden');
+        }
+        
+        function showRefund() {
+            document.getElementById('refund-modal').classList.remove('hidden');
+        }
+        
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
         }
     </script>
 </body>
