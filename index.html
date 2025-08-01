@@ -20,65 +20,156 @@
             backdrop-filter: blur(8px);
             background-color: rgba(0, 0, 0, 0.6);
         }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         .item-card {
-            transition: transform 0.3s ease;
             background: rgba(30, 41, 59, 0.8);
-            border-radius: 0.5rem;
+            border-radius: 8px;
             overflow: hidden;
+            transition: transform 0.3s ease;
         }
         .item-card:hover {
             transform: scale(1.03);
         }
         .item-card img {
             width: 100%;
-            height: 12rem;
+            height: 200px;
             object-fit: cover;
         }
-        /* Остальные стили... */
+        .item-card-content {
+            padding: 15px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        /* Добавлены все необходимые стили из предыдущей версии */
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        /* Дополнительные стили для корректного отображения */
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
     </style>
 </head>
 <body>
     <!-- Навигация -->
     <nav class="blur-bg sticky top-0 z-50">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-skull-crossbones text-2xl text-green-500"></i>
-                <span class="text-xl font-bold">ATTA DAYZ</span>
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 15px 0;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <i class="fas fa-skull-crossbones" style="font-size: 24px; color: #10B981;"></i>
+                <span style="font-size: 20px; font-weight: bold;">ATTA DAYZ</span>
             </div>
-            <!-- Меню и кнопки входа -->
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <a href="#" data-tab="shop" style="color: #f3f4f6; text-decoration: none;">Магазин</a>
+                <a href="#" data-tab="servers" style="color: #f3f4f6; text-decoration: none;">Сервера</a>
+                <a href="#" data-tab="profile" style="color: #f3f4f6; text-decoration: none;">Профиль</a>
+                <a href="#" data-tab="cart" style="color: #f3f4f6; text-decoration: none;">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <main class="container mx-auto px-4 py-8">
+    <!-- Основное содержимое -->
+    <main class="container" style="padding: 30px 0;">
         <!-- Магазин -->
         <div id="shop" class="tab-content active">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <h1 style="font-size: 28px; margin-bottom: 20px; display: flex; align-items: center;">
+                <i class="fas fa-store" style="margin-right: 10px; color: #10B981;"></i> МАГАЗИН ATTA
+            </h1>
+            
+            <div class="grid">
                 <!-- Товар 1 -->
                 <div class="item-card">
-                    <img src="https://i.imgur.com/JfTj6Lc.webp" alt="Военный рюкзак"
-                         onerror="this.src='https://i.imgur.com/7bX9Pqc.webp'">
-                    <div class="p-4">
-                        <h3 class="font-bold text-xl mb-2">Военный рюкзак</h3>
-                        <p class="text-gray-300 mb-4">Вместительный рюкзак для всех ваших нужд выживания.</p>
-                        <div class="flex justify-between items-center">
-                            <span class="font-bold text-green-400">29.99 ₽</span>
-                            <button class="add-to-cart bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+                    <img src="https://i.imgur.com/JfTj6Lc.webp" alt="Военный рюкзак" onerror="this.src='https://i.imgur.com/7bX9Pqc.webp'">
+                    <div class="item-card-content">
+                        <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Военный рюкзак</h3>
+                        <p style="color: #D1D5DB; margin-bottom: 15px;">Вместительный рюкзак для всех ваших нужд выживания.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: bold; color: #10B981;">29.99 ₽</span>
+                            <button class="add-to-cart" style="background-color: #059669; color: white; padding: 8px 15px; border-radius: 4px; border: none;">
                                 <i class="fas fa-cart-plus"></i> В корзину
                             </button>
                         </div>
                     </div>
                 </div>
-                <!-- Остальные товары... -->
+                
+                <!-- Товар 2 -->
+                <div class="item-card">
+                    <img src="https://i.imgur.com/kL8xH9v.webp" alt="Аптечка" onerror="this.src='https://i.imgur.com/7bX9Pqc.webp'">
+                    <div class="item-card-content">
+                        <h3 style="font-size: 18px; font-weight: bold; margin-bottom: 10px;">Аптечка</h3>
+                        <p style="color: #D1D5DB; margin-bottom: 15px;">Необходима для лечения ран и болезней.</p>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-weight: bold; color: #10B981;">19.99 ₽</span>
+                            <button class="add-to-cart" style="background-color: #059669; color: white; padding: 8px 15px; border-radius: 4px; border: none;">
+                                <i class="fas fa-cart-plus"></i> В корзину
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Добавьте остальные товары по аналогии -->
             </div>
         </div>
+
+        <!-- Остальные разделы (сервера, профиль, корзина) -->
     </main>
 
     <script>
-        // Проверка изображений
+        // Проверка загрузки изображений
         document.querySelectorAll('img').forEach(img => {
             img.onerror = function() {
-                this.src = 'https://i.imgur.com/7bX9Pqc.webp'; // Запасное изображение
+                this.src = 'https://i.imgur.com/7bX9Pqc.webp';
             };
+        });
+
+        // Инициализация табов
+        document.querySelectorAll('[data-tab]').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                e.preventDefault();
+                const tabId = this.getAttribute('data-tab');
+                
+                // Скрыть все табы
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                
+                // Показать выбранный таб
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Корзина
+        let cart = [];
+        
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', function() {
+                const card = this.closest('.item-card');
+                const item = {
+                    name: card.querySelector('h3').textContent,
+                    price: card.querySelector('span').textContent,
+                    image: card.querySelector('img').src
+                };
+                
+                cart.push(item);
+                document.getElementById('cart-count').textContent = cart.length;
+                alert(`${item.name} добавлен в корзину!`);
+            });
         });
     </script>
 </body>
